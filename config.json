@@ -4,31 +4,31 @@
     "quality": 1
  },
   "loader": {
-    "info": "https://github.com/robertcornelisschuppe/vikus-viewer-dresden/blob/main/info.md",
-    "timeline": "https://github.com/robertcornelisschuppe/vikus-viewer-dresden/blob/main/timeline.csv",
-    "items": "https://github.com/robertcornelisschuppe/vikus-viewer-dresden/blob/main/data.csv",
+    "info": "info.md",
+    "timeline": "timeline.csv",
+    "items": "data.csv",
     "layouts": [
         {
             "title": "Time"
         },
         {
             "title": "Similarity",
-            "url": "https://github.com/robertcornelisschuppe/vikus-viewer-dresden/blob/main/tsne.csv",
+            "url": "tsne.csv",
             "scale": 1.1
         }
     ],
     "textures": {
       "medium": {
         "size": 256,
-        "url": "https://github.com/robertcornelisschuppe/vikus-viewer-dresden/blob/main/data/sprites/spritesheet.json"
+        "url": "data/sprites/spritesheet.json"
       },
       "detail": {
         "size": 1024,
-        "url": "https://github.com/robertcornelisschuppe/vikus-viewer-dresden/tree/main/data/1024"
+        "url": "data/1024"
       },
       "big": {
         "size": 4096,
-        "url": "https://github.com/robertcornelisschuppe/vikus-viewer-dresden/tree/main/data/4096"
+        "url": "data/4096"
       }
     }
   },
