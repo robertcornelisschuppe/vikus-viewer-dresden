@@ -13,7 +13,7 @@
         },
         {
             "title": "Similarity",
-            "url": "https://vikusviewer.fh-potsdam.de/data/vangogh/tsne.csv",
+            "url": "https://github.com/robertcornelisschuppe/vikus-viewer-dresden/blob/main/tsne.csv",
             "scale": 1.1
         }
     ],
