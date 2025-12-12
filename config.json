@@ -20,7 +20,7 @@
     "textures": {
       "medium": {
         "size": 256,
-        "url": "https://vikusviewer.fh-potsdam.de/data/vangogh/sprites/web_web_full.json"
+        "url": "https://github.com/robertcornelisschuppe/vikus-viewer-dresden/blob/main/data/sprites/spritesheet.json"
       },
       "detail": {
         "size": 1024,
