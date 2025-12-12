@@ -313,12 +313,26 @@ canvas.loadMedia = function (d) {
     } 
     // 4. Generic HTML5 Audio (e.g., local .mp3, .wav)
     else if (link.match(/\.(mp3|wav|ogg)$/i)) {
-        iframeHtml = '<audio controls autoplay style="width:100%;"><source src="' + link + '" type="audio/mpeg">Your browser does not support the audio element.</audio>';
+        iframeHtml = '<audio id="vikus-audio-player" controls autoplay style="width:100%;">' +
+        '<source src="' + link + '" type="audio/mpeg">' +
+        '<source src="' + link + '">' + 
+        'Your browser does not support the audio element.</audio>';
     }
 
     if (iframeHtml) {
         mediaPlayerContainer.html(iframeHtml);
         mediaPlayerContainer.style("display", "block");
+        var player = document.getElementById('vikus-audio-player');
+        if (player) {
+            // WICHTIG: player.play() wird durch den vorherigen Klick auf das Bild
+            // freigegeben und sollte nun MIT TON starten.
+            setTimeout(function() {
+                player.play().catch(function(error) {
+                    // Falls es doch fehlschlägt, ist es ein Autoplay-Fehler
+                    console.log("Audio konnte nicht mit Ton starten. Autoplay-Blockade.", error);
+                });
+            }, 100); 
+        }
     } else {
         canvas.clearMedia();
     }
