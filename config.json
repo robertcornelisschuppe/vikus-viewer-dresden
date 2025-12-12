@@ -4,7 +4,7 @@
     "quality": 1
  },
   "loader": {
-    "info": "https://vikusviewer.fh-potsdam.de/data/vangogh/info.md",
+    "info": "https://github.com/robertcornelisschuppe/vikus-viewer-dresden/blob/main/info.md",
     "timeline": "https://vikusviewer.fh-potsdam.de/data/vangogh/timeline.csv",
     "items": "https://vikusviewer.fh-potsdam.de/data/vangogh/data.csv",
     "layouts": [
