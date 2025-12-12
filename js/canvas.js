@@ -1674,7 +1674,7 @@ function Canvas() {
     if (config.loader.textures.detail.csv) {
       url = d[config.loader.textures.detail.csv];
     } else {
-      url = config.loader.textures.detail.url + d.id + ".jpg";
+      url = config.loader.textures.detail.url + "/" + d.id + ".jpg";
     }
 
     var texture = new PIXI.Texture.from(url);
@@ -1714,7 +1714,7 @@ function Canvas() {
     if (config.loader.textures.big.csv) {
       url = d[config.loader.textures.big.csv];
     } else {
-      url = config.loader.textures.big.url + d.id + page + ".jpg";
+      url = config.loader.textures.big.url + "/" + d.id + page + ".jpg";
     }
 
     var texture = new PIXI.Texture.from(url);
