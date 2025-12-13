@@ -14,7 +14,7 @@
         {
             "title": "Similarity",
             "url": "tsne.csv",
-            "scale": 2
+            "scale": 1
         }
     ],
     "textures": {
@@ -50,7 +50,7 @@
     "searchbarBackground": "#295b71"
   },
   "projection": {
-    "columns": 3
+    "columns": 6
   },
   "detail": {
     "structure": [      
