@@ -710,7 +710,7 @@ svg {
   /*height: 100%;
   overflow-y: scroll;*/
   float: left;
-  padding: 60px;
+  padding: 60px 20px;
   /* padding-left: 60px; */
 }
 
@@ -1018,7 +1018,8 @@ textarea:focus, input:focus{
 }
 
 .detail .media-player-container {
-    padding: 15px 0 0; /* Add some space above the player */
+    /* Die vorhandenen Zeilen belassen */
+    padding: 15px 0 0; 
     max-width: 100%;
     margin: 0 auto;
     /* This makes the iframe responsive */
@@ -1026,9 +1027,14 @@ textarea:focus, input:focus{
     height: 0;
     padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
     overflow: hidden;
-    width: calc(100% + 40px);
-    margin-left: -20px;
-    margin-right: -20px;
+
+    /* HINZUFÜGEN ODER ÄNDERN SIE DIESE ZEILEN */
+    /* Nutzen Sie die volle Breite des .detail-Containers und heben Sie das 20px Padding links/rechts auf */
+    width: calc(100% + 40px); /* 100% (von .inner) + 2x 20px Padding */
+    margin-left: -20px; /* Verschiebt das Element 20px nach links */
+    
+    /* optional: */
+    max-width: none;
 }
 
 .detail .media-player-container .media-iframe {
