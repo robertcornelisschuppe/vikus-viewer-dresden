@@ -101,6 +101,8 @@
 
 .infobar.sneak .infobutton {
     right: -50px;
+    left: 25%;
+    transform: rotate(180deg);
 }
 
 .navi.hide {
@@ -143,11 +145,6 @@
 
 .navi .button:hover:not(.active) {
     color: rgba(255, 255, 255, 0.75);
-}
-
-.infobar.sneak .infobutton svg {
-    left: 65px;
-    transform: rotate(180deg);
 }
 
 .infobar h1 {
