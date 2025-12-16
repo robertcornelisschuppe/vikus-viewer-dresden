@@ -707,11 +707,8 @@ svg {
 }
 
 .detail .inner {
-  /*height: 100%;
-  overflow-y: scroll;*/
-  float: left;
+  display: block;
   padding: 60px;
-  /* padding-left: 60px; */
 }
 
 .detail2 {
@@ -1019,15 +1016,15 @@ textarea:focus, input:focus{
 
 .detail .media-player-container {
     padding: 15px 0 0; 
-    max-width: 100%;
     margin: 0 auto;
     position: relative;
     height: 0;
     padding-bottom: 56.25%;
     overflow: hidden;
-    width: calc(100% + 120px);
+    width: auto;
+    max-width: none;    
     margin-left: -60px;
-    max-width: none;
+    margin-right: -60px;
 }
 
 .detail .media-player-container .media-iframe {
