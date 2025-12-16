@@ -1015,7 +1015,7 @@ textarea:focus, input:focus{
 }
 
 .detail .media-player-container {
-    padding: 15px 0 0; 
+    padding: 15px; 
     margin: 0 auto;
     position: relative;
     height: 0;
