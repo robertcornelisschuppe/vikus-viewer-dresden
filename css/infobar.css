@@ -68,11 +68,11 @@
 }
 
 .infobar.sneak {
-    left: -480px;
+    left: -450px;
 }
 
 .infobar.sneak:hover {
-    left: -477px;
+    left: -447px;
 }
 
 .infobar .infobutton {
