@@ -438,7 +438,7 @@ canvas.loadMedia = function (d) {
 
 
     var translateTarget = [
-      width / 2 - scale * (centerX + padding),
+      (width - 700) / 2 - scale * (centerX + padding),
       height / 2 - scale * (height + centerY + padding),
     ];
 
@@ -1172,8 +1172,9 @@ canvas.loadMedia = function (d) {
     //var scale = 1 / (rangeBandImage / (width * 0.8));
     var max = Math.max(width, height);
     var scale = 1 / (rangeBandImage / (max * 0.6));
+    var visibleCenter = (width - 700) / 2;
     var translateNow = [
-      -scale * (d.x - padding) - (max * 0.3) / 2 + margin.left,
+      visibleCenter - scale * (d.x - padding) + margin.left,
       -scale * (height + d.y + padding) - margin.top + height / 2,
     ];
 
