@@ -727,7 +727,6 @@ canvas.resize = function () {
       //   }
       //   if (selectedImageDistance > 15) return;
       //   if (selectedImage && !selectedImage.id) return;
-      //   if (selectedImage && !selectedImage.active) return;
       //   if (drag) return;
 
       //   console.log("touch zoom")
@@ -936,16 +935,10 @@ function mousemove(d) {
       selectedImage = d;
     }
 
-    // --- FIX: Allow cursor to appear if 'active' is undefined ---
     container.style("cursor", function () {
-      var isClose = selectedImageDistance < cursorCutoff;
-      
-      // If 'active' is missing, we treat it as TRUE
-      var isActive = selectedImage && (selectedImage.active === undefined || selectedImage.active !== false);
-
-      return isClose && isActive ? "pointer" : "default";
+      // Simply check if we are close enough. Ignore "active" status.
+      return selectedImageDistance < cursorCutoff ? "pointer" : "default";
     });
-    // ------------------------------------------------------------
 
     if (d3.event.shiftKey) {
       container.style("cursor", "copy")
