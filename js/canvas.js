@@ -306,8 +306,9 @@ canvas.loadMedia = function (d) {
     } 
     // 3. Generic HTML5 Video (e.g., local .mp4, .webm)
     else if (link.match(/\.(mp4|ogg|webm)$/i)) {
-        iframeHtml = '<video width="100%" height="200px" controls autoplay><source src="' + link + '" type="video/mp4">Your browser does not support the video tag.</video>';
-    } 
+        // FIX: Removed fixed dimensions, added class="media-iframe" to fill the box
+        iframeHtml = '<video class="media-iframe" controls autoplay><source src="' + link + '" type="video/mp4">Your browser does not support the video tag.</video>';
+    }
     // 4. Generic HTML5 Audio (e.g., local .mp3, .wav)
     else if (link.match(/\.(mp3|wav|ogg)$/i)) {
         iframeHtml = '<audio id="vikus-audio-player" controls autoplay style="width:100%;">' +
