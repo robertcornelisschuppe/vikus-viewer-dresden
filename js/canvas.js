@@ -316,10 +316,6 @@ canvas.loadMedia = function (d) {
         '<source src="' + link + '">' + 
         'Your browser does not support the audio element.</audio>';
     }
-    // 5. SLUB Mediathek embedding
-    else if (link.includes("mediathek.slub-dresden.de")) {
-        iframeHtml = '<iframe class="media-iframe" src="' + link + '" frameborder="0" allowfullscreen></iframe>';
-    }
 
     if (iframeHtml) {
         mediaPlayerContainer.html(iframeHtml);
