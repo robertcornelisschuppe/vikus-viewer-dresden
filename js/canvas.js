@@ -350,40 +350,6 @@ canvas.loadMedia = function (d) {
     }
 };
 
-if (iframeHtml) {
-        mediaPlayerContainer.html(iframeHtml);
-        mediaPlayerContainer.style("display", "block");
-
-        // --- NEW: Dynamic Aspect Ratio Logic ---
-        // Read from CSV, default to "16:9" if empty
-        var ratio = d.aspect_ratio || "16:9"; 
-        var padding = "56.25%"; // Default height (16:9)
-
-        if (ratio === "4:3") {
-            padding = "75%"; // Taller height for boxy videos
-        } else if (ratio === "1:1") {
-            padding = "100%"; // Square videos
-        }
-
-        // Apply the calculated height to the player
-        mediaPlayerContainer.style("padding-bottom", padding);
-        // ---------------------------------------
-
-        var player = document.getElementById('vikus-audio-player');
-        // ... (keep your existing autoplay logic below) ...
-        if (player) {
-            setTimeout(function() {
-                player.play().catch(function(error) {
-                   console.log("Audio autoplay blocked", error);
-                });
-            }, 100); 
-        }
-    }
-    } else {
-        canvas.clearMedia();
-    }
-};
-
   canvas.getView = function () {
     var visibleItems = [];
 
