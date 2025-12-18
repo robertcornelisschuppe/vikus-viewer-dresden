@@ -288,23 +288,20 @@ canvas.loadMedia = function (d) {
 
     var iframeHtml = "";
 
-    // 1. YouTube embedding (uses iframe with autoplay=1)
+    // 1. YouTube embedding
     if (link.includes("youtube.com") || link.includes("youtu.be")) {
         var videoId = "";
         if (link.includes("youtu.be/")) {
-            // Short URL: youtu.be/VIDEO_ID
             videoId = link.split("youtu.be/")[1].split(/[?&]/)[0];
         } else if (link.includes("v=")) {
-            // Regular URL: watch?v=VIDEO_ID
             videoId = link.split("v=")[1].split(/[?&]/)[0];
         }
         if (videoId) {
             iframeHtml = '<iframe class="media-iframe" src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&showinfo=0&controls=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
         }
     } 
-    // 2. SoundCloud embedding (assumes user provides the embed player URL)
+    // 2. SoundCloud embedding
     else if (link.includes("soundcloud.com/player/")) {
-        // Appends autoplay parameter
         iframeHtml = '<iframe class="media-iframe" scrolling="no" frameborder="no" allow="autoplay" src="' + link + '&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"></iframe>';
     } 
     // 3. Generic HTML5 Video (e.g., local .mp4, .webm)
@@ -318,11 +315,40 @@ canvas.loadMedia = function (d) {
         '<source src="' + link + '">' + 
         'Your browser does not support the audio element.</audio>';
     }
-     //6. SLUB Mediathek embedding
-    // 3. SLUB Mediathek embedding
+    // 5. SLUB Mediathek embedding
     else if (link.includes("mediathek.slub-dresden.de")) {
         iframeHtml = '<iframe class="media-iframe" src="' + link + '" frameborder="0" allowfullscreen></iframe>';
     }
+
+    if (iframeHtml) {
+        mediaPlayerContainer.html(iframeHtml);
+        mediaPlayerContainer.style("display", "block");
+
+        // --- Dynamic Aspect Ratio Logic ---
+        var ratio = d.aspect_ratio || "16:9"; 
+        var padding = "56.25%"; 
+
+        if (ratio === "4:3") {
+            padding = "75%"; 
+        } else if (ratio === "1:1") {
+            padding = "100%"; 
+        }
+
+        mediaPlayerContainer.style("padding-bottom", padding);
+        // ----------------------------------
+
+        var player = document.getElementById('vikus-audio-player');
+        if (player) {
+            setTimeout(function() {
+                player.play().catch(function(error) {
+                   console.log("Audio autoplay blocked", error);
+                });
+            }, 100); 
+        }
+    } else {
+        canvas.clearMedia();
+    }
+};
 
 if (iframeHtml) {
         mediaPlayerContainer.html(iframeHtml);
