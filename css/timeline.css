@@ -31,7 +31,7 @@
     /* transition: all 0s linear; */
     /* margin-left: auto; */
     /* margin-right: auto; */
-    border-top: 1px solid rgba(243, 235, 214, 0.11);
+    border-top: 1px solid #454545;
     /* background: #fff; */
     transform-origin: left top;
     position: absolute;
@@ -64,8 +64,8 @@
     /* overflow: hidden; */
     position: relative;
     transform-origin: left top;
-    background: #E5E3D2;
-    color: #000;
+    background: #454545;
+    color: #fff;
     float: left;
 }
 
