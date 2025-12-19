@@ -693,7 +693,7 @@ svg {
     right: 0px;
     position: absolute;
     width: 700px;
-    color: #ffffff;
+    color: #fafafa;
     background: rgb(255, 254, 250);
     /* background: url("img/koenigspapier.png"); */
     /* font-size: 13px; */
@@ -748,7 +748,7 @@ svg {
 
 .detail .entry .label {
   text-transform: uppercase;
-  color: rgba(0,0,0,0.24);
+  color: #fafafa;
   font-weight: 900;
   flex: 1;
   padding-bottom: 3px;
@@ -795,7 +795,7 @@ svg {
 }
 
 .detail a {
-  color: #2D2D2D;
+  color: #fafafa;
   font-style: normal;
 }
 
